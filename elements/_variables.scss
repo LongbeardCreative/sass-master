@@ -1,0 +1,40 @@
+/******************************************************************
+
+Stylesheet: Variables
+
+******************************************************************/
+
+/* Colours */
+
+$color1:      		#272727;
+$color2:  	        #009fb7;
+$color3:      		#fed766;
+$color4:  	        #a4a3a6;
+$color5:      		#eff1f3;
+$color-hover:       #009fb7;
+$color-active:      #009fb7;
+
+$color-p:           #272727;
+$text-gray:         #a4a3a6;
+$white:             #ffffff;
+$gray:              #eff1f3;
+$black:             #000000;
+
+/* Spacing / Padding */
+
+$padding-top:       90px;
+$padding-left:      136px;
+$padding-right:     136px;
+$padding-bottom:    90px;
+$padding:           90px 136px;
+
+$heading-space:     30px;
+
+$transition: 0.14s ease-in-out;
+
+.opacity-hover {
+    transition: opacity $transition;
+    &:hover {
+        opacity: 0.8;
+    }
+}
