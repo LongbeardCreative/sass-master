@@ -1,74 +1,179 @@
 /******************************************************************
 Stylesheet: Mixins Stylesheet
 ******************************************************************/
-
 /*********************
 TRANSITION
 *********************/
-
-
 @mixin transition($transition...) {
-  // defining prefixes so we can use them in mixins below
-  $prefixes:      ("-webkit-", "" );
-  @each $prefix in $prefixes {
-    #{$prefix}transition: $transition;
-  }
+    // defining prefixes so we can use them in mixins below
+    $prefixes: ("-webkit-", "" );
+    @each $prefix in $prefixes {
+        #{$prefix}transition: $transition;
+    }
 }
-
 /*********************
 CSS3 GRADIENTS
 *********************/
-
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
 @mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
-	background-color: $to;
-	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-	background-image: -webkit-linear-gradient(top, $from, $to);
-	background-image: -moz-linear-gradient(top, $from, $to);
-	background-image: -o-linear-gradient(top, $from, $to);
-	background-image: linear-gradient(to bottom, $from, $to);
+    background-color: $to;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+    background-image: -webkit-linear-gradient(top, $from, $to);
+    background-image: -moz-linear-gradient(top, $from, $to);
+    background-image: -o-linear-gradient(top, $from, $to);
+    background-image: linear-gradient(to bottom, $from, $to);
 }
-
 /*********************
 BOX SIZING
 *********************/
-
 /* @include box-sizing(border-box); */
 @mixin box-sizing($type: border-box) {
-	-webkit-box-sizing: $type;
-	-moz-box-sizing:    $type;
-	-ms-box-sizing:     $type;
-	box-sizing:         $type;
+    -webkit-box-sizing: $type;
+    -moz-box-sizing: $type;
+    -ms-box-sizing: $type;
+    box-sizing: $type;
+}
+/**********************
+BUTTONS
+**********************/
+%btn {
+    border-width: 0 !important;
+    border-radius: 0 !important;
+    font: $h6;
+    padding: 0 !important;
+    width: auto;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        bottom: 0;
+        transition: 300ms;
+    }
+
+    &:hover {
+        opacity: 1 !important;
+        background-color: transparent !important;
+
+        &::after {
+            height: calc(100% + 3px);
+            opacity: 0.3;
+        }
+    }
 }
 
-/*********************
-BUTTONS
-*********************/
+@mixin btn($btn-color) {
+    &::after {
+        background: $btn-color;
+    }
 
-%btn {
-  display: inline-block;
-  position: relative;
-  font: $body-font;
-  text-decoration: none;
-  color:$white;
-  background-color: $color2;
-  font-size: 2em;
-  line-height: 2.2em;
-  padding: 10px 12px;
-  border: 1px;
-  cursor: pointer;
-  @include transition(background-color 0.14s ease-in-out);
+    &:hover {
+        color: $btn-color !important;
+    }
 
-  // hovering on the btn
-  &:hover, &:focus {
-    background-color: $color2;
-    text-decoration: none;
-    outline: none;
-  } // end hover
+    @extend %btn;
+}
+/**********************
+PADDING
+**********************/
+@mixin padding($param) {
+     @if $param == horizontal{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    @else if $param == vertical {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    @else if $param == vertical-sm {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    @else if $param == vertical-lg {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+/**************************
+RESPONSIVE RATIO
+**************************/
+@mixin ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    }
+    @else {
+        padding-top: $padding;
+    }
+}
+/*************************
+MEDIA QUERY (MQ)
+*************************/
+$breakpoints: ( "phone": 400px, "phone-wide": 480px, "phablet": 560px, "tablet-small": 640px, "tablet": 768px, "tablet-wide": 1024px, "desktop": 1248px, "desktop-wide": 1440px );
+@mixin breakpoint($width, $type: max) {
+    $param: type-of($width);
+    @if $param == string {
+         @if map_has_key($breakpoints, $width){
+            $width: map_get($breakpoints, $width);
+            @if $type == max {
+                $width: $width - 1px;
+            }
+            @media only screen and (#{$type}-width: $width) {
+                 @content;
+            }
+        }
+    }
+    @else if $param == number {
+        @media only screen and (#{$type}-width: $width) {
+             @content;
+        }
+    }
+}
+/*USAGE
+.lb_div {
+    padding: 20px;
+    @include mq('tablet-wide') {
+        padding-top: 14px;
+    }
+}
+*/
+/************************
+CENTER DIV
+************************/
+@mixin center {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+/*********************************
+SVG BACKGROUND IMAGE WITH FALLBACK
+*********************************/
+$image-path: '../img' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+@mixin background-image($name, $size:false) {
+    background-image: url("#{$image-path}/#{$name}.svg");
+    @if($size) {
+        background-size: $size;
+    }
 
-  // clicking on the button
-  &:active {
-    top: 1px; // adds a tiny hop to the click
-  } // end active
-
-} // end .button
+    .no-svg & {
+        background-image: url("#{$image-path}/#{$name}.#{$fallback-extension}");
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+            background-image: url("#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension}");
+        }
+    }
+}
+/* USAGE
+.lb_div {
+    @include background-image('bg');
+}
+** must have bg.svg, bg.png & bg@2x.png
+*/
