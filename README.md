@@ -46,7 +46,7 @@ Simply run `grunt` out of the theme directory via SSH.
 
 
 
-##Changelog
+## Changelog
 
 ### August 18, 2017
 
