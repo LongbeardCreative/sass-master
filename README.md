@@ -37,8 +37,12 @@ You can set the resolution by using different notations and units : pixel-ratio 
 Grunt processes currently include:
 * Autoprefixing
 * CSS minification
-* 
 
+### Usage
+
+Simply run `grunt` out of the theme directory via SSH.
+
+*Only recommend running this close to launch or when exporting final code from staging*. Compile time is slow, so during development recommended usage is only for cross-browser checks or code testing.
 
 
 
