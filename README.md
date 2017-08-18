@@ -7,9 +7,11 @@ Master SCSS file structure for WP web-dev projects
 
 Use `@include breakpoint` inline, directly within an HTML selector.
 
-`@include breakpoint(000px){
+```
+@include breakpoint(000px){
 	// Rule here.
-}`
+}
+```
 
 ### Resolution
 
@@ -19,7 +21,8 @@ You can set the resolution by using different notations and units : pixel-ratio 
 
 **Example Usage:**
 
-`@include resolution(2dppx) {
+```
+@include resolution(2dppx) {
     // Rule here
   }
 
@@ -29,7 +32,8 @@ You can set the resolution by using different notations and units : pixel-ratio 
 
   @include resolution(retina) {
   	// Rule here
-  	}`
+  	}
+```
 
 
 ## Grunt.js
