@@ -14,12 +14,12 @@ add_action( 'vc_after_init', 'add_lb_custom_class' );/* Note: here we are using 
 function add_lb_custom_class() {
     //Get array of vc elements minus 'vc_' that support custom class "el_class"
     $elements = array(
-        'vc_column_text'    => 'lb_column_text',
-        'vc_empty_space'    => 'lb_empty_space',
-        'vc_row'            => 'lb_row',
-        'vc_column'         => 'lb_column',
-        'vc_row_inner'      => 'lb_row_inner',
-        'vc_column_inner'   => 'lb_column_inner'
+        'vc_column_text'    => 'lb-column_text',
+        'vc_empty_space'    => 'lb-empty_space',
+        'vc_row'            => 'lb-row',
+        'vc_column'         => 'lb-column',
+        'vc_row_inner'      => 'lb-row_inner',
+        'vc_column_inner'   => 'lb-column_inner'
         );
 
     //Loop over each element in array

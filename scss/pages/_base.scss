@@ -1,13 +1,20 @@
 /******************************************************************
+
 Stylesheet: Universal Site Styles
 
 Only put styles in here that will be used across the entire site.
 For styles only applying to one particular page, use the appropriate
 page SCSS file.
+
 ******************************************************************/
 /*********************
 GENERAL STYLES
 *********************/
+// This is the base font size that all typographic elements should be scaled to.
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: $body-font;
     font-size: 100%;
@@ -18,26 +25,22 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.desktop-hide {
-    display: none;
-}
-
-.mobile-hide {
-    display: initial;
-}
 /*********************
 LINK STYLES
 *********************/
 a,
 a:visited {
     color: $color-active;
+
     /* on hover */
     &:focus,
     &:hover {
         color: $color-hover;
     }
+
     /* on click */
     &:active {}
+
     /* mobile tap color */
     &:link {
         /*
@@ -45,9 +48,10 @@ a:visited {
         so it basically works like the :hover selector
         for mobile devices.
         */
-        -webkit-tap-highlight-color: rgba( 0, 0, 0, 0.3);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
     }
 }
+
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
@@ -63,6 +67,7 @@ h4,
 h5 {
     text-rendering: optimizelegibility;
     font-weight: 500;
+
     /*
     if you're going to use webfonts, be sure to check your weights
     http://css-tricks.com/watch-your-font-weight/
@@ -105,155 +110,29 @@ h5 {
     letter-spacing: 2px;
 }
 
-p {}
 /*********************
-HEADER STYLES
+HEADER & NAV STYLES
 *********************/
 
-.header_inner_left {
-
-    .logo_wrapper {
-
-        .q_logo {
-
-        }
-    }
-}
-
-
-
-/*********************
-NAVIGATION STYLES
-**********************/
-
+@import "elements/header";
 
 /*********************
 HERO STYLES
 *********************/
 
-
 /*********************
-POSTS & CONTENT STYLES
+GLOBAL ELEMENTS
 *********************/
-.content {
-
-}
-
-.lb_section_heading {
-    h1 {
-
-    }
-}
-    
-
-.lb_section_body {
-    margin-top: $heading-space;
-
-    p {
-        font-size: 1.1em;
-    }
-}
-
-
-/******************************************************************
-SINGLE BLOG POST STYLES
-******************************************************************/
-
-
-.blog_holder article {
-    .post_text h2 .date {
-
-    }
-
-    .post_info {
-
-    }
-
-    .post_image {
-
-
-        img {
-
-        }
-    }
-
-    .post_text_inner {
-
-    }
-}
-
-.single-post {
-    .full_width_inner {
-       
-    }
-
-    .post_author,
-    .vertical_separator {
-    }
-}
-
-.blog_holder.single_image_title_post article {
-    .section_inner {
-      
-    }
-
-    .post_category {
-
-    }
-
-    .entry_title {
-
-    }
-
-    .post_info {
-
-    }
-
-    .post_text_inner p {
-
-    }
-
- 
-}
-
-
-/******************************************************************
-COMMENT FORM STYLES
-******************************************************************/
-
-
 /*********************
-SIDEBARS & ASIDES
+Please add global elements as a partial to the "elements" folder and import here. 
+Example of great canidates are title areas, accordions, or tabs.
 *********************/
+
+@import "elements/buttons";
+@import "elements/forms";
+
 /*********************
 FOOTER STYLES
 *********************/
-.footer_top {
 
-
-    .container .container_inner {
-        #text-2 {
-
-
-            .textwidget {
-                .footer-logo-wrap {
-                   
-                    #footer-logo {
-                       
-                    }
-                }
-
-                a {
-                   
-                    h5 {
-                        
-                    }
-
-                    h5:hover {
-                       
-                    }
-                }
-            }
-        }
-    }
-}
+@import "elements/footer";

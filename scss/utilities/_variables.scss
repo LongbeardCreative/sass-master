@@ -22,11 +22,8 @@ $black:             #000000;
 
 /* Spacing / Padding */
 
-$padding-top:       90px;
-$padding-left:      136px;
-$padding-right:     136px;
-$padding-bottom:    90px;
-$padding:           90px 136px;
+$col: 100% / 12;
+$col-vw: 100vw / 12;
 
 $heading-space:     30px;
 
@@ -38,3 +35,11 @@ $transition: 0.14s ease-in-out;
         opacity: 0.8;
     }
 }
+
+
+/* Consultmate variables */
+$mobile-view: max-width: 600px;
+$tab-view: max-width: 1024px;
+$desk-view: min-width 1200px;
+// border thickness
+$b-thickness: 1px;

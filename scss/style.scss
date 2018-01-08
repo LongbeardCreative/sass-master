@@ -21,51 +21,39 @@ IMPORT ELEMENTS
 *********************/
 
 // Sass variables
-@import "elements/variables";
+@import "utilities/variables";
 
 // typography
-@import "elements/typography";
+@import "utilities/typography";
 
 // import mixin
-@import "elements/mixins";
+@import "utilities/mixins";
 
-// buttons
-@import "elements/buttons";
-
-// forms (inputs & labels)
-@import "elements/forms";
 
 /*********************
 IMPORT PAGES
 *********************/
-// Homepage
+// styles in base.scss
+@import "pages/base";
 
+// Homepage
 .home{
 @import "pages/homepage";
 }
 
 // About
-
 .page-id-xx{
 @import "pages/about";
 }
 
 // News & Stories
-
 .page-id-xx{
 @import "pages/news";
 }
 
 // Contact
-
 .page-id-xx{
 @import "pages/contact";
-}
-
-// Support
-
-.page-id-xx{
-@import "pages/support";
 }
 
 // Search
@@ -78,8 +66,11 @@ IMPORT PAGES
 @import "pages/post"
 }
 
-// styles in base.scss
-@import "pages/base";
+// Post template
+.error404{
+@import "pages/404"
+}
+
 
 
 
@@ -89,7 +80,7 @@ PRINT STYLESHEET
 @media print {
 
 	// styles in print.scss
-	@import "elements/print";
+	@import "utilities/print";
 
 }
 
