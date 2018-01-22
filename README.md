@@ -1,5 +1,5 @@
 # sass-master
-Master SCSS file structure for WP web-dev projects using BRIDGE/VC
+Master SCSS file structure for WP web-dev projects using OXYGEN
 
 ## Mixins
 
