@@ -21,7 +21,7 @@ linters:
     max_elements: 1
 
   BorderZero:
-    enabled: true
+    enabled: false
     convention: zero # or `none`
 
   ChainedClasses:
@@ -31,7 +31,7 @@ linters:
     enabled: true
 
   ColorVariable:
-    enabled: false
+    enabled: true
 
   Comment:
     enabled: false
@@ -41,10 +41,10 @@ linters:
     enabled: true
 
   DeclarationOrder:
-    enabled: true
+    enabled: false
 
   DisableLinterReason:
-    enabled: false
+    enabled: true
 
   DuplicateProperty:
     enabled: true
@@ -94,8 +94,8 @@ linters:
   Indentation:
     enabled: true
     allow_non_nested_indentation: false
-    character: space # or 'tab'
-    width: 4
+    character: tab # or 'tab'
+    width: 1
 
   LeadingZero:
     enabled: true
@@ -108,7 +108,7 @@ linters:
   NameFormat:
     enabled: true
     allow_leading_underscore: true
-    convention: snake_case # or 'camel_case', or 'snake_case', or a regex pattern
+    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
     variable_convention: hyphenated_lowercase
     function_convention: hyphenated_lowercase
 
@@ -168,7 +168,7 @@ linters:
 
   SelectorFormat:
     enabled: true
-    convention: snake_case # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    convention: hyphenated_lowercase # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
     enabled: true
@@ -182,7 +182,7 @@ linters:
     enabled: true
 
   SpaceAfterComma:
-    enabled: true
+    enabled: false
     style: one_space # or 'no_space', or 'at_least_one_space'
 
   SpaceAfterComment:
@@ -198,7 +198,7 @@ linters:
     enabled: true
 
   SpaceAfterVariableColon:
-    enabled: false
+    enabled: true
     style: one_space # or 'no_space', 'at_least_one_space' or 'one_space_or_newline'
 
   SpaceAfterVariableName:
@@ -218,7 +218,7 @@ linters:
     spaces: 0
 
   StringQuotes:
-    enabled: false
+    enabled: true
     style: single_quotes # or double_quotes
 
   TrailingSemicolon:
@@ -228,7 +228,7 @@ linters:
     enabled: true
 
   TrailingZero:
-    enabled: false
+    enabled: true
 
   TransitionAll:
     enabled: true
