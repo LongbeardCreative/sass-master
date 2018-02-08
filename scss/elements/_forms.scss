@@ -16,23 +16,14 @@ For other GF CSS classes, go here: https://www.gravityhelp.com/documentation/art
 GRAVITY FORM UNIVERSAL STYLES
 *********************/
 
-body .gform_wrapper { }
-
-body .gform_wrapper .gform_heading .gform_title { }
-
-body .gform_wrapper .gform_heading .gform_description { }
-
-body .gform_wrapper .gform_body .gform_fields .gfield { }
-
-body .gform_wrapper .gform_body .gform_fields .gfield input[type=text] { }
-
-body .gform_wrapper .gform_body .gform_fields .gfield select { }
-
-body .gform_wrapper .gform_body .gform_fields .gfield textarea { }
-
-body .gform_wrapper .gform_body .gform_fields .gfield .gfield_radio { }
-
-body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox {}
+body .gform_wrapper {
+  .gform_heading {
+    .gform_title, .gform_description {}
+  }
+  .gform_body .gform_fields .gfield {
+    input[type=text], select, textarea, .gfield_radio, .gfield_checkbox {}
+  }
+}
 
 /*********************
 ACTIVE STATES
