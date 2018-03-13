@@ -79,3 +79,8 @@ p {
 //           font-feature-settings: "kern" 1, "dlig" 1;
 }
 
+::selection {
+  background: $color2;
+  color: #fff;
+}
+
