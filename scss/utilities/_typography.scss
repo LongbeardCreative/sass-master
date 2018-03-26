@@ -40,28 +40,34 @@ $h6: 400 1rem / 1.2em $primary-font;
 
 // Setting universal font styles
 
-h1 {
+h1,
+.h1 {
     font: $h1;
     color: $color2;
 }
 
-h2 {
+h2,
+.h2 {
     font: $h2;
 }
 
-h3 {
+h3,
+.h3 {
     font: $h3;
 }
 
-h4 {
+h4,
+.h4 {
     font: $h4;
 }
 
-h5 {
+h5,
+.h5 {
     font: $h5;
 }
 
-h6 {
+h6,
+.h6 {
     font: $h6;
 }
 
