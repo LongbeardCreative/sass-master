@@ -2,12 +2,12 @@
 
 // enqueue the child theme stylesheet
 
-Function wp_schools_enqueue_scripts() {
-wp_register_style( 'childstyle', get_stylesheet_directory_uri() . '/style.css'  );
+function wp_lb_enqueue_scripts() {
+wp_register_style( 'childstyle', get_stylesheet_directory_uri() . '../../../plugins/nitrogen/assets/style.css'  );
 wp_enqueue_style( 'childstyle' );
-wp_enqueue_script( 'lb_custom-js', get_stylesheet_directory_uri() . '/js/lb_custom.js', array( 'jquery' ) );
-}
-add_action( 'wp_enqueue_scripts', 'wp_schools_enqueue_scripts', 11);
+wp_enqueue_script( 'lb_custom-js', get_stylesheet_directory_uri() . '../../../plugins/nitrogen/assets/js/lb_custom.js', array( 'jquery' ), '1.0', true );
+};
+add_action( 'wp_enqueue_scripts', 'wp_lb_enqueue_scripts', 11);
 
 // add lb_ classes to all applicable VC elements
 add_action( 'vc_after_init', 'add_lb_custom_class' );/* Note: here we are using vc_after_init because WPBMap::GetParam and mutateParame are available only when default content elements are "mapped" into the system */
