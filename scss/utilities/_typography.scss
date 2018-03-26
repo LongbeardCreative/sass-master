@@ -4,25 +4,37 @@ Stylesheet: Typography
 
 ******************************************************************/
 
-
 /*********************
 FONT FACE
 *********************/
 
-
 @font-face {
-  font-family: '';
-  src: '';
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Gotham Rounded Medium';
+    src: url("../fonts/GothamRounded-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamRounded-Medium.otf") format("opentype"), url("../fonts/GothamRounded-Medium.woff") format("woff"), url("../fonts/GothamRounded-Medium.ttf") format("truetype"), url("GothamRounded-Medium.svg#GothamRounded-Medium") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
 // font stacks
+$sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: "Georgia", Cambria, Times New Roman, Times, serif;
+$primary-font: "Gotham Rounded Book", $sans-serif;
+$secondary-font: "Gotham Rounded Medium", $serif;
+
+$heading-font: 80px "Gotham Rounded Medium", $sans-serif;
+$body-font: 400 1rem / 1.2em "Gotham Rounded Book", $sans-serif;
+
+$h1: 800 6rem / 1.2em $primary-font;
+$h2: 600 5rem / 1.2em $primary-font;
+$h3: 600 4rem / 1.2em $primary-font;
+$h4: 400 3rem / 1.2em $primary-font;
+$h5: 400 2rem / 1.2em $primary-font;
+$h6: 400 1rem / 1.2em $primary-font;
 
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-$primary:		'Gotham Rounded Medium';
-$secondary:		'Gotham Rounded Book';
+$primary:		        'Gotham Rounded Medium';
+$secondary:		      'Gotham Rounded Book';
 
 // theme fonts
 
@@ -38,30 +50,41 @@ $h6:				400 1em/1.2em $secondary, $sans-serif;
 
 // Setting universal font styles
 
-h1 {
+h1,
+.h1 {
     font: $h1;
-    }
-h2 {
-    font: $h2;
-    }
-h3 {
-    font: $h3;
-    }
-h4 {
-    font: $h4;
-    }
-h5 {
-    font: $h5;
-    }
-h6 {
-    font: $h6;
-    }
+    color: $color2;
+}
 
+h2,
+.h2 {
+    font: $h2;
+}
+
+h3,
+.h3 {
+    font: $h3;
+}
+
+h4,
+.h4 {
+    font: $h4;
+}
+
+h5,
+.h5 {
+    font: $h5;
+}
+
+h6,
+.h6 {
+    font: $h6;
+}
 
 p {
   font: $body-font;
   -ms-word-wrap: break-word;
-  word-break: break-word; //non-standart css for webkit
+  word-break: break-word;
   word-wrap: break-word;
   // cleaning up the ragged lines and breaks
   -webkit-hyphens: auto;
@@ -71,7 +94,7 @@ p {
   -webkit-hyphenate-before: 2;
    -webkit-hyphenate-after: 3;
            hyphenate-lines: 3;
-  // enabling fancy ligatures when available
+// enabling fancy ligatures when available
 //   -webkit-font-feature-settings: "liga", "dlig";
 //    -moz-font-feature-settings: "liga=1, dlig=1";
 //       -ms-font-feature-settings: "liga", "dlig";
@@ -83,4 +106,3 @@ p {
   background: $color2;
   color: #fff;
 }
-
