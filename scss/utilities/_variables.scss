@@ -6,37 +6,36 @@ Stylesheet: Variables
 
 /* Colours */
 
-$color1:      		#272727;
-$color2:  	        #009fb7;
-$color3:      		#fed766;
-$color4:  	        #a4a3a6;
-$color5:      		#eff1f3;
-$color-hover:       #009fb7;
-$color-active:      #009fb7;
+$color1: #272727;
+$color2: #009fb7;
+$color3: #fed766;
+$color4: #a4a3a6;
+$color5: #eff1f3;
+$color-hover: #009fb7;
+$color-active: #009fb7;
 
-$color-p:           #272727;
-$text-gray:         #a4a3a6;
-$white:             #ffffff;
-$gray:              #eff1f3;
-$black:             #000000;
+$color-p: #272727;
+$text-gray: #a4a3a6;
+$white: #ffffff;
+$gray: #eff1f3;
+$black: #000000;
 
 /* Spacing / Padding */
 
 $col: 100% / 12;
 $col-vw: 100vw / 12;
 
-$heading-space:     30px;
+$h-space: 1.5rem;
+$p-space: 1rem;
 
-$transition: 0.14s ease-in-out;
-
-.opacity-hover {
-    transition: opacity $transition;
-    &:hover {
-        opacity: 0.8;
-    }
-}
+$transition: 0.25s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
 
 
 /* Consultmate variables */
 // border thickness
 $border-width: 1px;
+
+// common device break points
+$tablet-break: 1024px;
+$mobile-break: 600px;
