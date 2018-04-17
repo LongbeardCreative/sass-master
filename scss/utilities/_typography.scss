@@ -16,29 +16,15 @@ FONT FACE
 }
 
 // font stacks
-$sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif: "Georgia", Cambria, Times New Roman, Times, serif;
-$primary-font: "Gotham Rounded Book", $sans-serif;
-$secondary-font: "Gotham Rounded Medium", $serif;
-
-$heading-font: 80px "Gotham Rounded Medium", $sans-serif;
-$body-font: 400 1rem / 1.2em "Gotham Rounded Book", $sans-serif;
-
-$h1: 800 6rem / 1.2em $primary-font;
-$h2: 600 5rem / 1.2em $primary-font;
-$h3: 600 4rem / 1.2em $primary-font;
-$h4: 400 3rem / 1.2em $primary-font;
-$h5: 400 2rem / 1.2em $primary-font;
-$h6: 400 1rem / 1.2em $primary-font;
 
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-$primary:		        'Gotham Rounded Medium';
-$secondary:		      'Gotham Rounded Book';
+$primary:		    'Gotham Rounded Medium';
+$secondary:		    'Gotham Rounded Book';
 
 // theme fonts
 
-$heading-font:			80px $primary, $sans-serif;
+$heading-font:		80px $primary, $sans-serif;
 $body-font:			400 1em/1.2em $secondary, $sans-serif;
 
 $h1:				800 6em/6.2em $secondary, $sans-serif;
