@@ -66,12 +66,61 @@ MEDIA QUERY (MQ)
 *************************/
 @import 'breakpoint';
 /************************
-CENTER DIV
+PADDING / MARGIN ASSIST
 ************************/
-@mixin center {
-    margin: {
-        left: auto;
-        right: auto;
+// top padding
+@mixin padding-top($pad) {
+    padding-top: $pad;
+
+    @include breakpoint($tablet-break) {
+        padding-top: $pad * 1.5;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-top: $pad * 2;
+    }
+}
+
+// bottom padding
+@mixin padding-bottom($pad) {
+    padding-bottom: $pad;
+
+    @include breakpoint($tablet-break) {
+        padding-bottom: $pad * 1.5;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-bottom: $pad * 2;
+    }
+}
+
+// top margin
+@mixin margin-top($pad) {
+    margin-top: $pad;
+
+    @include breakpoint($tablet-break) {
+        margin-top: $pad * 1.5;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        margin-top: $pad * 2;
+    }
+}
+
+// bottom margin
+@mixin margin-bottom($pad) {
+    margin-bottom: $pad;
+
+    @include breakpoint($tablet-break) {
+        margin-bottom: $pad * 1.5;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        margin-bottom: $pad * 2;
     }
 }
 /*********************************
