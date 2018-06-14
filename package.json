@@ -18,5 +18,6 @@
   "homepage": "https://github.com/LongbeardCreative/sass-master#readme",
   "dependencies": {
     "grunt": "^1.0.1"
-  }
+  }, 
+  "sasslintConfig": "sass-lint.yml"
 }
