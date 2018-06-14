@@ -3,6 +3,10 @@
 Stylesheet: Mixins Stylesheet
 
 ******************************************************************/
+/*************************
+MEDIA QUERY (MQ)
+*************************/
+@import 'breakpoint';
 /**********************
 BUTTONS
 **********************/
@@ -17,20 +21,9 @@ BUTTONS
         content: '';
         display: block;
         width: 100%;
-        height: 3px;
+        height: 1px;
         position: absolute;
         bottom: 0;
-        transition: 300ms;
-    }
-
-    &:hover {
-        opacity: 1 !important;
-        background-color: transparent !important;
-
-        &::after {
-            height: calc(100% + 3px);
-            opacity: 0.3;
-        }
     }
 }
 
@@ -61,17 +54,77 @@ RESPONSIVE RATIO
         padding-top: $padding;
     }
 }
+
 /*************************
 MEDIA QUERY (MQ)
 *************************/
-@import 'breakpoint';
-/************************
-CENTER DIV
-************************/
-@mixin center {
-    margin: {
-        left: auto;
-        right: auto;
+// gutter padding
+@mixin side-gutters {
+    @include breakpoint($tablet-break) {
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-left: $col-vw !important;
+        padding-right: $col-vw !important;
+    }
+}
+
+// padding top
+@mixin padding-top($pad) {
+    padding-top: $pad;
+
+    @include breakpoint($tablet-break) {
+        padding-top: $pad * 1.5;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-top: $pad * 2;
+    }
+}
+
+// padding bottom
+@mixin padding-bottom($pad) {
+    padding-bottom: $pad;
+
+    @include breakpoint($tablet-break) {
+        padding-bottom: $pad * 1.5;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-bottom: $pad * 2;
+    }
+}
+
+// margin top
+@mixin margin-top($margin) {
+    margin-top: $margin !important;
+
+    @include breakpoint($tablet-break) {
+        margin-top: ($margin * 1.5) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        margin-top: ($margin * 2) !important;
+    }
+}
+
+// margin bottom
+@mixin margin-bottom($margin) {
+    margin-bottom: $margin !important;
+
+    @include breakpoint($tablet-break) {
+        margin-bottom: ($margin * 1.5) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        margin-bottom: ($margin * 2) !important;
     }
 }
 /*********************************
