@@ -5,12 +5,11 @@ Stylesheet: Variables
 ******************************************************************/
 
 /* Colours */
-
-$color1: #272727;
-$color2: #009fb7;
-$color3: #fed766;
-$color4: #a4a3a6;
-$color5: #eff1f3;
+$color1: #000000;
+$color2: #000000;
+$color3: #FFFFFF;
+$color4: #FFFFFF;
+$color5: #FFFFFF;
 $color-hover: #009fb7;
 $color-active: #009fb7;
 
@@ -28,23 +27,15 @@ $col-vw: 100vw / 12;
 $h-space: 1.5rem;
 $p-space: 1rem;
 
+//transitions
 $transition: 0.25s ease-in-out;
 $transition-slow: 0.5s ease-in-out;
-
-$transition: 0.14s ease-in-out;
-
-.opacity-hover {
-    transition: opacity $transition;
-    &:hover {
-        opacity: 0.8;
-    }
-}
-
 
 // border thickness
 $border-width: 1px;
 
-
 // common device break points
+$laptop-break: 1440px;
 $tablet-break: 1024px;
 $mobile-break: 600px;
+$mobile-break-sml: 340px;
