@@ -47,17 +47,3 @@ Grunt processes currently include:
 Simply run `grunt` out of the theme directory via SSH.
 
 *Only recommend running this close to launch or when exporting final code from staging*. Compile time is slow, so during development recommended usage is only for cross-browser checks or code testing.
-
-
-
-## Changelog
-
-### August 18, 2017
-
-* Added search page styles: `pages/search.scss` and post template `pages/post.scss` pages.
-* Added `.gitignore`
-* **Removed responsive breakpoint files**. All `@media` queries should now be inserted inline using breakpoint includes/mixins. See above for usage.
-* Added resolution mixins to target high-def screens. See above for usage.
-* Added `lb_custom.js` and parent folder
-* Added `Gruntfile.js` + corresponding `package.json`. See above for Grunt.js usage.
-* General file / comment cleanup
