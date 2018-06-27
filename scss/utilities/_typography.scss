@@ -10,8 +10,6 @@ FONT FACE
 // font stacks
 $sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif: "Georgia", Cambria, Times New Roman, Times, serif;
-$primary: 'Gotham Rounded Medium';
-$secondary: 'Gotham Rounded Book';
 
 // theme fonts
 $body-font: 400 1em/1.2em $secondary, $sans-serif;
@@ -27,7 +25,6 @@ $h6: 400 1em/1.2em $secondary, $sans-serif;
 h1,
 .h1 {
     font: $h1;
-    color: $color2;
 }
 
 h2,
@@ -78,5 +75,5 @@ p {
 
 ::selection {
   background: $color2;
-  color: #fff;
+  color: $white;
 }
