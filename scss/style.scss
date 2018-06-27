@@ -9,7 +9,7 @@ Template: bridge
 */
 
 /******************************************************************
-†JMJ
+
 Site Name: 
 Author: Longbeard
 
@@ -21,66 +21,59 @@ IMPORT ELEMENTS
 *********************/
 
 // Sass variables
-@import "utilities/variables";
+@import 'utilities/variables';
 
 // typography
-@import "utilities/typography";
+@import 'utilities/typography';
 
 // import mixin
-@import "utilities/mixins";
-
+@import 'utilities/mixins';
 
 /*********************
 IMPORT PAGES
 *********************/
 // styles in base.scss
-@import "pages/base";
+@import 'pages/base';
 
 // Homepage
-.home{
-@import "pages/homepage";
+.home {
+    @import 'pages/homepage';
 }
 
 // About
-.page-id-xx{
-@import "pages/about";
+.page-id-xx {
+    @import 'pages/about';
 }
 
 // News & Stories
-.page-id-xx{
-@import "pages/news";
+.page-id-xx {
+    @import 'pages/news';
 }
 
 // Contact
-.page-id-xx{
-@import "pages/contact";
+.page-id-xx {
+    @import 'pages/contact';
 }
 
 // Search
-.search-results{
-@import "pages/search"
+.search-results {
+    @import 'pages/search';
 }
 
 // Post template
-.single-post{
-@import "pages/post"
+.single-post {
+    @import 'pages/post';
 }
 
 // Post template
-.error404{
-@import "pages/404"
+.error404 {
+    @import 'pages/404';
 }
-
-
-
 
 /*********************
 PRINT STYLESHEET
 *********************/
 @media print {
-
-	// styles in print.scss
-	@import "utilities/print";
-
+    // styles in print.scss
+    @import 'utilities/print';
 }
-
