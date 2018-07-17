@@ -14,15 +14,23 @@ module.exports = function(grunt) {
         processors: [
           require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes 
           require('cssnano')(), // minify the result 
+          require('postcss-flexibility'), // add vendor prefix for flex-fallback
         ]
       },
       dist: {
         src: '*.css'
       }
+    },
+    watch: {
+      scripts: {
+        files: ['**/*.css'],
+        tasks: ['postcss'],
+      },
     }
   });
 
   grunt.loadNpmTasks('grunt-postcss');
-
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.registerTask('default', ['postcss']);
+
 };
