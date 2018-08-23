@@ -77,43 +77,12 @@ h5 {
     }
 }
 
-// .h1,
-// h1 {
-//     font-size: 2.5em;
-//     line-height: 1.333em;
-// }
-
-// .h2,
-// h2 {
-//     font-size: 1.75em;
-//     line-height: 1.4em;
-//     margin-bottom: 0.375em;
-// }
-
-// .h3,
-// h3 {
-//     font-size: 1.125em;
-// }
-
-// .h4,
-// h4 {
-//     font-size: 1.1em;
-//     font-weight: 700;
-// }
-
-// .h5,
-// h5 {
-//     font-size: 0.846em;
-//     line-height: 2.09em;
-//     text-transform: uppercase;
-//     letter-spacing: 2px;
-// }
 
 /*********************
 HEADER & NAV STYLES
 *********************/
 
-@import "elements/header";
+@import "../elements/header";
 
 /*********************
 HERO STYLES
@@ -127,11 +96,11 @@ Please add global elements as a partial to the "elements" folder and import here
 Example of great canidates are title areas, accordions, or tabs.
 *********************/
 
-@import "elements/buttons";
-@import "elements/forms";
+@import "../elements/buttons";
+@import "../elements/forms";
 
 /*********************
 FOOTER STYLES
 *********************/
 
-@import "elements/footer";
+@import "../elements/footer";
