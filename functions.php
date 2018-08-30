@@ -9,26 +9,68 @@ wp_enqueue_script( 'lb_custom-js', get_stylesheet_directory_uri() . '../../../pl
 };
 add_action( 'wp_enqueue_scripts', 'wp_lb_enqueue_scripts', 11);
 
-// add lb_ classes to all applicable VC elements
-add_action( 'vc_after_init', 'add_lb_custom_class' );/* Note: here we are using vc_after_init because WPBMap::GetParam and mutateParame are available only when default content elements are "mapped" into the system */
-function add_lb_custom_class() {
-    //Get array of vc elements minus 'vc_' that support custom class "el_class"
-    $elements = array(
-        'vc_column_text'    => 'lb-column_text',
-        'vc_empty_space'    => 'lb-empty_space',
-        'vc_row'            => 'lb-row',
-        'vc_column'         => 'lb-column',
-        'vc_row_inner'      => 'lb-row_inner',
-        'vc_column_inner'   => 'lb-column_inner'
-        );
+// Enqueue Google Analytics to header
 
-    //Loop over each element in array
-    foreach ($elements as $oldEl => $newClass) {
-        //Get current values stored in the class param in element
-        $param = WPBMap::getParam( $oldEl, 'el_class' );
-        //Append new value to the 'value' array
-        $param['value'][__( 'el_class', $newClass )] = $newClass;
-        //Finally "mutate" param with new values
-        vc_update_shortcode_param( $oldEl, $param );
-    }
+function init_analytics() {
+    $analyticsUA = 'UA-CODE-HERE';
+    $analytics = '<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67479109-23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(\'js\', new Date());
+
+  gtag(\'config\', \'' . $analyticsUA . '\');
+</script>';
+    
+echo "\n" . $analytics;
 }
+
+add_action('wp_head', 'init_analytics', 35);
+
+function init_pixel() {
+    $pixelID = '123456789';
+    $pixel = '<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,\'script\',
+  \'https://connect.facebook.net/en_US/fbevents.js\');
+  fbq(\'init\', \'' . $pixelID . '\');
+  fbq(\'track\', \'PageView\');
+</script>
+<noscript><img height=\'1\' width=\'1\' style=\'display:none\'
+  src=\'https://www.facebook.com/tr?id=' . $pixelID . ' &ev=PageView&noscript=1\'
+/></noscript><!-- End Facebook Pixel Code -->';
+
+echo "\n" . $pixel;
+}
+
+
+// add_action('wp_head', 'init_pixel', 35
+
+
+
+
+
+// Enqueue Google Analytics to header
+
+function init_analytics() {
+    $analytics = '<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67479109-23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(\'js\', new Date());
+
+  gtag(\'config\', \'UA-67479109-23\');
+</script>';
+    
+echo "\n" . $analytics;
+}
+
+add_action('wp_head', 'init_analytics', 35);
