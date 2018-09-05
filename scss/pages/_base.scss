@@ -19,6 +19,8 @@ body {
     font-family: $body-font;
     font-size: 100%;
     color: $color-p;
+    color-adjust: economy;
+    -webkit-print-color-adjust: economy;
     background-color: $white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
