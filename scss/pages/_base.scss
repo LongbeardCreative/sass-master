@@ -39,6 +39,11 @@ a:visited {
         color: $color-hover;
     }
 
+    // hide outline for mouse users but preserves it for keyboard users.
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+
     /* on click */
     &:active {}
 
