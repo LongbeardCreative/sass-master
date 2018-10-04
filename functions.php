@@ -50,27 +50,8 @@ function init_pixel() {
 echo "\n" . $pixel;
 }
 
-
-// add_action('wp_head', 'init_pixel', 35
-
+// add_action('wp_head', 'init_pixel', 35);
 
 
 
 
-// Enqueue Google Analytics to header
-
-function init_analytics() {
-    $analytics = '<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67479109-23"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag(\'js\', new Date());
-
-  gtag(\'config\', \'UA-67479109-23\');
-</script>';
-    
-echo "\n" . $analytics;
-}
-
-add_action('wp_head', 'init_analytics', 35);
