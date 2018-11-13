@@ -58,33 +58,6 @@ a:visited {
     }
 }
 
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-h1,
-h2,
-h3,
-h4,
-h5 {
-    text-rendering: optimizelegibility;
-    font-weight: 500;
-
-    /*
-    if you're going to use webfonts, be sure to check your weights
-    http://css-tricks.com/watch-your-font-weight/
-    */
-    /* removing text decoration from all headline links */
-    a {
-        text-decoration: none;
-    }
-}
-
-
 /*********************
 HEADER & NAV STYLES
 *********************/
@@ -100,7 +73,7 @@ GLOBAL ELEMENTS
 *********************/
 /*********************
 Please add global elements as a partial to the "elements" folder and import here. 
-Example of great canidates are title areas, accordions, or tabs.
+Example of great candidates are title areas, accordions, or tabs.
 *********************/
 
 @import "../elements/buttons";

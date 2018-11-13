@@ -24,6 +24,26 @@ $h5: 400 2em/1.2em $secondary, $sans-serif;
 $h6: 400 1em/1.2em $secondary, $sans-serif;
 
 // Setting universal font styles
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-rendering: optimizelegibility;
+
+    &.bottom {
+        margin-bottom: 2rem;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+}
 
 h1,
 .h1 {
