@@ -59,6 +59,37 @@ a:visited {
 }
 
 /*********************
+WP STANDARD POST IMAGE & ALIGNMENTS
+*********************/
+
+.alignleft {
+    float: left;
+    padding: 10px 10px 10px 0px;
+    max-width: 100%;
+    height: auto;
+
+    @include breakpoint($mobile-break) {
+        padding-right: 0;
+    }
+}
+
+.alignright {
+    float: right;
+    padding: 10px 0 10px 10px;
+        max-width: 100%;
+
+    @include breakpoint($mobile-break) {
+        padding-left: 0;
+    }
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+/*********************
 HEADER & NAV STYLES
 *********************/
 
