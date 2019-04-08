@@ -1,20 +1,11 @@
 <?php
 
-// enqueue the child theme stylesheet
-
-function wp_lb_enqueue_scripts() {
-wp_register_style( 'childstyle', get_stylesheet_directory_uri() . '../../../plugins/nitrogen/assets/style.css'  );
-wp_enqueue_style( 'childstyle' );
-wp_enqueue_script( 'lb_custom-js', get_stylesheet_directory_uri() . '../../../plugins/nitrogen/assets/js/lb_custom.js', array( 'jquery' ), '1.0', true );
-};
-add_action( 'wp_enqueue_scripts', 'wp_lb_enqueue_scripts', 11);
-
 // Enqueue Google Analytics to header
 
 function init_analytics() {
     $analyticsUA = 'UA-CODE-HERE';
     $analytics = '<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67479109-23"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=' . $analyticsUA . '"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -26,7 +17,7 @@ function init_analytics() {
 echo "\n" . $analytics;
 }
 
-add_action('wp_head', 'init_analytics', 35);
+// add_action('wp_head', 'init_analytics', 35);
 
 function init_pixel() {
     $pixelID = '123456789';
