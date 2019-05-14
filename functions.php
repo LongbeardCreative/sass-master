@@ -62,67 +62,67 @@ function cookie_consent() {
   $privacyPolicyURL = 'https://example.com';
   $cookiePolicyURL = 'https://example.com';
 
-      $cookiesEN = '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#002136",
-      "text": "#ffffff"
+  $cookiesEN = '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#F1EDEA",
+        "text": "#636267"
+      },
+      "button": {
+        "background": "#9A6D32",
+        "text": "#ffffff",
+      }
     },
-    "button": {
-      "background": "#1cadb2",
-      "text": "#ffffff",
+    "showLink": false,
+    "content": {
+      "message": "By using this website, you agree to our <a href=\"' . $privacyPolicyURL . '\" target=\"_blank\">Privacy Policy</a> and <a href=\"' . $cookiePolicyURL . '\" target=\"_blank\">Terms of Use.</a>",
+            "dismiss": "Accept"
     }
-  },
-  "showLink": false,
-  "content": {
-    "message": "By using this website, you agree to our <a href=\"http://www.la-archdiocese.org/Pages/Help/PrivacyPolicy.aspx\" target=\"_blank\">Privacy Policy</a> and <a href=\"http://www.la-archdiocese.org/Pages/Help/TermsofUse.aspx\" target=\"_blank\">Terms of Use.</a>",
-          "dismiss": "Accept"
-  }
-})});
-</script>';
-
-      $cookiesES = '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#002136",
-      "text": "#ffffff"
+  })});
+  </script>';
+  
+        $cookiesES = '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#F1EDEA",
+        "text": "#ffffff"
+      },
+      "button": {
+        "background": "#1cadb2",
+        "text": "#ffffff",
+  
+      }
     },
-    "button": {
-      "background": "#1cadb2",
-      "text": "#ffffff",
-
+    "showLink": false,
+    "content": {
+      "message": "By using this website, you agree to our <a href=\"' . $privacyPolicyURL . '\" target=\"_blank\">Privacy Policy</a> and <a href=\"' . $cookiePolicyURL . '\" target=\"_blank\">Terms of Use.</a>",
+            "dismiss": "Accept"
     }
-  },
-  "showLink": false,
-  "content": {
-    "message": "By using this website, you agree to our <a href=\"http://www.example.com\" target=\"_blank\">Privacy Policy</a> and <a href=\"http://example.com\" target=\"_blank\">Terms of Use.</a>",
-          "dismiss": "Accept"
+  })});
+  </script>';
+  
+  // For multilingual sites equipped with WPML 
+  
+      // if( ICL_LANGUAGE_CODE =='es' ) {
+      //     echo "\n" . $cookiesES;
+      // } else {
+      //     echo "\n" . $cookiesEN;
+      // }
+  
+      // Regular monolingual website usage
+  
+      echo "\n" . $cookiesEN;
+  
+      
   }
-})});
-</script>';
-
-// For multilingual sites equipped with WPML 
-
-    // if( ICL_LANGUAGE_CODE =='es' ) {
-    //     echo "\n" . $cookiesES;
-    // } else {
-    //     echo "\n" . $cookiesEN;
-    // }
-
-    // Regular monolingual website usage
-
-    echo "\n" . $cookiesEN;
-
-    
-}
 
 // add_action('wp_head', 'cookie_consent', 10);
 
