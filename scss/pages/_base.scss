@@ -30,7 +30,8 @@ body {
 LINK STYLES
 *********************/
 a,
-a:visited {
+a:visited,
+a:-webkit-any-link {
     color: $color-active;
 
     /* on hover */
