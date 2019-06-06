@@ -10,13 +10,14 @@ $color2: #000000;
 $color3: #FFFFFF;
 $color4: #FFFFFF;
 $color5: #FFFFFF;
-$color-hover: #009fb7;
-$color-active: #009fb7;
+$color6: #FFFFFF;
+$color-hover: #009FB7;
+$color-active: #009FB7;
 
 $color-p: #272727;
-$text-gray: #a4a3a6;
-$white: #ffffff;
-$gray: #eff1f3;
+$text-gray: #A4A3A6;
+$white: #FFFFFF;
+$gray: #EFF1F3;
 $black: #000000;
 
 /* Spacing / Padding */
@@ -24,19 +25,17 @@ $black: #000000;
 $col: 100% / 12;
 $col-vw: 100vw / 12;
 
-$h-space: 1.5rem;
-$p-space: 1rem;
-
 //transitions
 $transition: 0.25s ease-in-out;
 $transition-slow: 0.5s ease-in-out;
 
-// border thickness
-$border-width: 1px;
-
 // common device break points
 $desktop-break: 1920px;
+$desktop-break: 1920px;
+$laptop-break-lrg: 1550px;
 $laptop-break: 1440px;
+$laptop-break-sml: 1280px;
 $tablet-break: 1024px;
+$tablet-break-sml: 768px;
 $mobile-break: 600px;
 $mobile-break-sml: 340px;

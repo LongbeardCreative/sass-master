@@ -5,3 +5,56 @@ Site Name:
 Stylesheet: Buttons
 
 ******************************************************************/
+/**********************
+BUTTONS
+**********************/
+%btn {
+    border-width: 0 !important;
+    border-radius: 0 !important;
+    font: $h6;
+    padding: 0 !important;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    background: transparent;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    &.white {
+        color: $white !important;
+
+        &::after {
+            background: $white !important;
+        }
+    }
+
+    &.top {
+        margin-top: 2rem;
+    }
+}
+
+@mixin btn($btn-color, $bar-color) {
+    color: $btn-color;
+
+    &::after {
+        background: $bar-color;
+    }
+
+    &:hover {
+        color: $btn-color !important;
+    }
+
+    @extend %btn;
+}
+
+.btn,
+.ct-link-button {
+    @include btn($color1);
+}

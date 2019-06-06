@@ -1,0 +1,36 @@
+/******************************************************************
+
+Site Name:
+
+Stylesheet: Row & columns
+
+******************************************************************/
+.ct-section {
+    position: relative;
+    background-size: cover !important;
+    background-position: center  !important;
+
+    .ct-section-inner-wrap {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    @include paddings;
+    @include background-colors;
+}
+
+.ct-new-columns > .ct-div-block {
+    padding: 0;
+    background-size: cover !important;
+    background-position: center  !important;
+
+    @include paddings;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
