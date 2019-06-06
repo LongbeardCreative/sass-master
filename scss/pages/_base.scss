@@ -10,13 +10,90 @@ page SCSS file.
 /*********************
 GENERAL STYLES
 *********************/
-@import '../elements/typography';
+// This is the base font size that all typographic elements should be scaled to.
+html {
+    font-size: 16px;
+}
+
+body {
+    font: $body-font;
+    font-size: 100%;
+    color: $color-p;
+    color-adjust: economy;
+    -webkit-print-color-adjust: economy;
+    background-color: $white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*********************
+LINK STYLES
+*********************/
+a,
+a:visited {
+    color: $color-active;
+
+    /* on hover */
+    &:focus,
+    &:hover {
+        color: $color-hover;
+    }
+
+    // hide outline for mouse users but preserves it for keyboard users.
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    /* on click */
+    &:active {}
+
+    /* mobile tap color */
+    &:link {
+        /*
+        this highlights links on iPhones/iPads.
+        so it basically works like the :hover selector
+        for mobile devices.
+        */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/*********************
+WP STANDARD POST IMAGE & ALIGNMENTS
+*********************/
+
+.alignleft {
+    float: left;
+    padding: 10px 10px 10px 0px;
+    max-width: 100%;
+    height: auto;
+
+    @include breakpoint($mobile-break) {
+        padding-right: 0;
+    }
+}
+
+.alignright {
+    float: right;
+    padding: 10px 0 10px 10px;
+        max-width: 100%;
+
+    @include breakpoint($mobile-break) {
+        padding-left: 0;
+    }
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+}
 
 /*********************
 HEADER & NAV STYLES
 *********************/
 
-@import '../elements/header';
+@import "../elements/header";
 
 /*********************
 HERO STYLES
@@ -26,16 +103,15 @@ HERO STYLES
 GLOBAL ELEMENTS
 *********************/
 /*********************
-Please add global elements as a partial to the 'elements' folder and import here. 
+Please add global elements as a partial to the "elements" folder and import here. 
 Example of great candidates are title areas, accordions, or tabs.
 *********************/
 
-@import '../elements/buttons';
-@import '../elements/forms';
-@import '../elements/rows-columns';
+@import "../elements/buttons";
+@import "../elements/forms";
 
 /*********************
 FOOTER STYLES
 *********************/
 
-@import '../elements/footer';
+@import "../elements/footer";

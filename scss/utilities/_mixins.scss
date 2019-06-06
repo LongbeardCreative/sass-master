@@ -7,17 +7,45 @@ Stylesheet: Mixins Stylesheet
 MEDIA QUERY (MQ)
 *************************/
 @import 'breakpoint';
+/**********************
+BUTTONS
+**********************/
+%btn {
+    border-width: 0 !important;
+    border-radius: 0 !important;
+    font: $h6;
+    padding: 0 !important;
+    width: auto;
 
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+@mixin btn($btn-color) {
+    &::after {
+        background: $btn-color;
+    }
+
+    &:hover {
+        color: $btn-color !important;
+    }
+
+    @extend %btn;
+}
 /**************************
 RESPONSIVE RATIO
 **************************/
-@mixin ratio($x, $y, $pseudo: false) {
-    $padding: unquote($y / $x * 100 + '%');
-
+@mixin ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
     @if $pseudo {
         &:before {
             @include pseudo($pos: relative);
-
             width: 100%;
             padding-top: $padding;
         }
@@ -28,61 +56,10 @@ RESPONSIVE RATIO
 }
 
 /*************************
-PADDINGS
+MEDIA QUERY (MQ)
 *************************/
 // gutter padding
 @mixin side-gutters {
-    padding-left: $col-vw !important;
-    padding-right: $col-vw !important;
-
-    @include breakpoint($tablet-break) {
-        padding-left: $col-vw !important;
-        padding-right: $col-vw !important;
-    }
-
-
-    @include breakpoint($mobile-break) {
-        padding-left: $col-vw !important;
-        padding-right: $col-vw !important;
-    }
-}
-
-@mixin lrg-side-gutters {
-    padding-left: ($col-vw * 2) !important;
-    padding-right: ($col-vw * 2) !important;
-
-    @include breakpoint($laptop-break) {
-        padding-left: $col-vw !important;
-        padding-right: $col-vw !important;
-    }
-
-
-    @include breakpoint($mobile-break) {
-        padding-left: $col-vw !important;
-        padding-right: $col-vw !important;
-    }
-}
-
-@mixin x-lrg-side-gutters {
-    padding-left: ($col-vw * 3) !important;
-    padding-right: ($col-vw * 3) !important;
-
-    @include breakpoint($tablet-break) {
-        padding-left: $col-vw !important;
-        padding-right: $col-vw !important;
-    }
-
-
-    @include breakpoint($mobile-break) {
-        padding-left: $col-vw !important;
-        padding-right: $col-vw !important;
-    }
-}
-
-@mixin xx-lrg-side-gutters {
-    padding-left: ($col-vw * 4) !important;
-    padding-right: ($col-vw * 4) !important;
-
     @include breakpoint($tablet-break) {
         padding-left: ($col-vw * 2) !important;
         padding-right: ($col-vw * 2) !important;
@@ -97,29 +74,29 @@ PADDINGS
 
 // padding top
 @mixin padding-top($pad) {
-    padding-top: $pad !important;
+    padding-top: $pad;
 
     @include breakpoint($tablet-break) {
-        padding-top: ($pad * 1.5) !important;
+        padding-top: $pad * 1.5;
     }
 
 
     @include breakpoint($mobile-break) {
-        padding-top: ($pad * 2) !important;
+        padding-top: $pad * 2;
     }
 }
 
 // padding bottom
 @mixin padding-bottom($pad) {
-    padding-bottom: $pad !important;
+    padding-bottom: $pad;
 
     @include breakpoint($tablet-break) {
-        padding-bottom: ($pad * 1.5) !important;
+        padding-bottom: $pad * 1.5;
     }
 
 
     @include breakpoint($mobile-break) {
-        padding-bottom: ($pad * 2) !important;
+        padding-bottom: $pad * 2;
     }
 }
 
@@ -150,277 +127,25 @@ PADDINGS
         margin-bottom: ($margin * 2) !important;
     }
 }
-
-/*************************
-COLORS
-*************************/
-@mixin colors {
-    &.color1 {
-        color: $color1 !important;
-    }
-
-    &.color2 {
-        color: $color2 !important;
-    }
-
-    &.color3 {
-        color: $color3 !important;
-    }
-
-    &.dark-grey {
-        color: $color4 !important;
-    }
-
-    &.color5 {
-        color: $color5 !important;
-    }
-
-    &.color6 {
-        color: $color6 !important;
-    }
-
-    &.white {
-        color: $white !important;
-    }
-}
-
-@mixin background-colors {
-    &.bg-color1 {
-        background-color: $color1 !important;
-    }
-
-    &.bg-color2 {
-        background-color: $color2 !important;
-    }
-
-    &.bg-color3 {
-        background-color: $color3 !important;
-    }
-
-    &.bg-color4 {
-        background-color: $color4 !important;
-    }
-
-    &.bg-color5 {
-        background-color: $color5 !important;
-    }
-
-    &.bg-color6 {
-        background-color: $color6 !important;
-    }
-
-    &.bg-color6 {
-        background-color: $color6 !important;
-    }
-
-    &.bg-white {
-        background-color: $white !important;
-    }
-}
-
-@mixin paddings {
-    &.top {
-        @include padding-top($col-vw);
-    }
-
-    &.bottom {
-        @include padding-bottom($col-vw);
-    }
-
-    &.left {
-        padding-left: $col-vw !important;
-    }
-
-    &.right {
-        padding-right: $col-vw !important;
-    }
-
-    &.top-half {
-        @include padding-top($col-vw / 2);
-    }
-
-    &.bottom-half {
-        @include padding-bottom($col-vw / 2);
-    }
-
-    &.top-third {
-        @include padding-top($col-vw / 3);
-    }
-
-    &.bottom-third {
-        @include padding-bottom($col-vw / 3);
-    }
-
-    &.left-half {
-        padding-left: ($col-vw / 2) !important;
-
-        @include breakpoint($tablet-break) {
-            padding-left: $col-vw !important;
-        }
-    }
-
-    &.right-half {
-        padding-right: ($col-vw / 2) !important;
-
-        @include breakpoint($tablet-break) {
-            padding-right: $col-vw !important;
-        }
-    }
-}
-
-@mixin gutters {
-    &.gutters {
-        @include side-gutters;
-    }
-
-    &.lrg-gutters {
-        @include lrg-side-gutters;
-    }
-
-    &.x-lrg-gutters {
-        @include x-lrg-side-gutters;
-    }
-
-    &.xx-lrg-gutters {
-        @include xx-lrg-side-gutters;
-    }
-}
-
-@mixin h-lrg-padding {
-    &.top {
-        padding-top: 3rem;
-
-        @include breakpoint($laptop-break) {
-            padding-top: 2.5rem;
-        }
-
-
-        @include breakpoint($tablet-break) {
-            padding-top: 2.167rem;
-        }
-    }
-
-    &.bottom {
-        padding-bottom: 4rem;
-
-        @include breakpoint($laptop-break) {
-            padding-bottom: 3.643rem;
-        }
-
-
-        @include breakpoint($tablet-break) {
-            padding-bottom: 3.167rem;
-        }
-    }
-}
-
-@mixin h-med-padding {
-    &.bottom {
-        padding-bottom: 2.125rem;
-
-        @include breakpoint($laptop-break) {
-            padding-bottom: 1.857rem;
-        }
-
-
-        @include breakpoint($tablet-break) {
-            padding-bottom: 1.5rem;
-        }
-
-
-        @include breakpoint($mobile-break) {
-            padding-bottom: 1.083rem;
-        }
-    }
-
-    &.top {
-        padding-top: 2.125rem;
-
-        @include breakpoint($laptop-break) {
-            padding-top: 1.857rem;
-        }
-
-
-        @include breakpoint($tablet-break) {
-            padding-top: 1.5rem;
-        }
-
-
-        @include breakpoint($mobile-break) {
-            padding-top: 1.083rem;
-        }
-    }
-}
-
-@mixin button-margin {
-    &.bottom {
-        margin-bottom: 2.75rem;
-
-        @include breakpoint($laptop-break) {
-            margin-bottom: 2.571rem;
-        }
-
-
-        @include breakpoint($tablet-break) {
-            margin-bottom: 2.333rem;
-        }
-
-
-        @include breakpoint($mobile-break) {
-            margin-bottom: 1.5rem;
-        }
-    }
-
-    &.top {
-        margin-top: 2.75rem;
-
-        @include breakpoint($laptop-break) {
-            margin-top: 2.571rem;
-        }
-
-
-        @include breakpoint($tablet-break) {
-            margin-top: 2.333rem;
-        }
-
-
-        @include breakpoint($mobile-break) {
-            margin-top: 1.5rem;
-        }
-    }
-}
-
-/*********************************
-BACKGROUND IMAGES
-*********************************/
-@mixin bg-cc {
-    background-size: cover !important;
-    background-position: center !important;
-}
-
 /*********************************
 SVG BACKGROUND IMAGE WITH FALLBACK
 *********************************/
 $image-path: '../img' !default;
 $fallback-extension: 'png' !default;
 $retina-suffix: '@2x';
-
-@mixin background-image($name, $size: false) {
-    background-image: url('#{$image-path}/#{$name}.svg');
-
-    @if $size {
+@mixin background-image($name, $size:false) {
+    background-image: url("#{$image-path}/#{$name}.svg");
+    @if($size) {
         background-size: $size;
     }
 
     .no-svg & {
-        background-image: url('#{$image-path}/#{$name}.#{$fallback-extension}');
-
-        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-            background-image: url('#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension}');
+        background-image: url("#{$image-path}/#{$name}.#{$fallback-extension}");
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+            background-image: url("#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension}");
         }
     }
 }
-
 /* USAGE
 .lb_div {
     @include background-image('bg');
