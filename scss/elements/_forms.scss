@@ -15,13 +15,158 @@ For other GF CSS classes, go here: https://www.gravityhelp.com/documentation/art
 /*********************
 GRAVITY FORM UNIVERSAL STYLES
 *********************/
-body .gform_wrapper {
-    .gform_heading {
-        .gform_title, .gform_description {}
-    }
+body {
+    .gform_wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
 
-    .gform_body .gform_fields .gfield {
-        input[type=text], select, textarea, .gfield_radio, .gfield_checkbox {}
+        .gform_heading {
+            .gform_title {
+                font: $h3;
+            }
+
+            .gform_description {}
+        }
+
+        .gform_body .gform_fields .gfield {
+            margin-top: 2.5rem !important;
+            padding-right: 0;
+
+            @include breakpoint($tablet-break) {
+                margin-top: 2rem !important;
+            }
+
+
+            @include breakpoint($mobile-break) {
+                margin-top: 1.5rem !important;
+
+                span.name_last {
+                    margin-top: 1.5rem !important;
+                }
+            }
+
+
+            &:first-child {
+                margin-top: 0 !important;
+            }
+
+            > .gfield_label {
+                display: none !important;
+            }
+
+            input[type='text'],
+            select,
+            textarea {
+                color: $color-p;
+                border: 0 !important;
+                background: $color6;
+                transition: $transition-slow;
+                outline: none !important;
+                padding: 0.5rem 1rem !important;
+                font: $body-font;
+
+                &::placeholder,
+                &::-moz-placeholder,
+                &:-ms-input-placeholder,
+                &:-moz-placeholder {
+                    color: $color1 !important;
+                }
+
+                &:hover,
+                &:focus {
+                    background: $white;
+                    box-shadow: 0 3px 6px transparentize($color3, 0.84);
+                }
+
+                + label {
+                    display: none;
+                }
+            }
+
+            .gfield_radio,
+            .gfield_checkbox {
+                li {
+                    input {
+                        display: none;
+
+                        &:checked {
+                            + label {
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+
+                    label {
+                        display: block;
+                        position: relative;
+                        padding-left: 2rem;
+                        margin-right: 0;
+                        font: $body-font;
+                        font-weight: 400 !important;
+                        color: $color1;
+
+                        a {
+                            font-weight: 700 !important;
+                            color: $color1;
+
+                            &:hover {
+                                color: $color2;
+                            }
+                        }
+
+                        &::before {
+                            width: 1rem;
+                            height: 1rem;
+                            content: '';
+                            position: absolute;
+                            top: 7px;
+                            left: 7px;
+                            background: $white;
+                            border: 2px solid $color2;
+                        }
+
+                        &::after {
+                            width: 1rem;
+                            height: 1rem;
+                            content: '';
+                            position: absolute;
+                            background: $color2;
+                            background-size: cover !important;
+                            background-position: center !important;
+                            top: 7px;
+                            left: 7px;
+                            opacity: 0;
+                            transition: $transition;
+                        }
+                    }
+                }
+            }
+
+            .gfield_radio {
+                li {
+                    label {
+                        &::before,
+                        &::after {
+                            border-radius: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .gform_footer {
+            margin: 0 !important;
+            padding: 0 !important;
+
+            .gform_button {
+                margin-right: 0 !important;
+                margin-top: 2.5rem;
+
+                @include btn;
+            }
+        }
     }
 }
 
