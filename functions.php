@@ -262,11 +262,18 @@ function the_breadcrumb() {
 //// BREADCRUMB END ////
 
 
-
-
-
 // filter the Gravity Forms button type
 // add_filter( 'gform_submit_button_1', 'subscribe_button', 10, 2 );
 // function subscribe_button( $button, $form ) {
 //     return "<button class='button submit-button' id='gform_submit_button_{$form['id']}'><span>Subscribe</span></button>";
 // }
+
+// add Video Tutorials link to WP Admin
+
+add_action('admin_menu', 'videotutorials_admin_menu');
+ 
+function videotutorials_admin_menu() {
+    global $submenu;
+    $url = '/video-tutorials';
+    $submenu['index.php'][] = array('Video Tutorials', 'manage_options', $url);
+}
