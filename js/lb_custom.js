@@ -17,6 +17,17 @@ $(document).ready(function() {
 DECLARED FUNCTIONS
 *********************/
 function accessibility() {
+
+    // Remove focus from links
+    $('body').addClass('no-focus-outline');
+    
+    // Listen to tab events to enable outlines (accessibility improvement)
+    document.body.addEventListener('keyup', function(e) {
+        if (e.which === 9) {
+            document.body.classList.remove('no-focus-outline');
+        }
+    });
+
     // Helper function for Radio buttons and Check boxes. 
     // Right now we need this since we actually remove input element so we can replace it with a stylized version
     function RandCB(ele) {
